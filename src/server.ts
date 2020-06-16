@@ -102,7 +102,12 @@ import { Car, cars as cars_list } from './cars';
 
   app.post("/cars",(req: Request,res:Response )=>{
     // destruct our body payload for our variables
-    console.log(req.body.make);
+    console.log(req.body);
+    // this  is kind of matching that's we put the curly braces , else we can just use x and it will
+    //return the whole object of the body if we have put x then it will do the matching for us 
+    //and capture the value of key x inside this variable .
+    //let { x }=req.body;
+    //console.log(x);
     let { make, type, model, cost, id } = req.body;
     
     // check to make sure all required variables are set
